@@ -1,13 +1,15 @@
+import { useContext } from "react";
 import "./App.css";
-import AccountsChart from "./components/AccountsChart";
-import accounts from "./mock-data/get";
+import Accounts from "./components/Accounts";
+import { StoreContext } from "./context/store";
 
 function App() {
+  const accounts = useContext(StoreContext);
   return (
     <>
       <h1>Nominal Challenge</h1>
       <div className="main">
-        <AccountsChart accounts={accounts} />
+        <Accounts accounts={accounts} />
       </div>
     </>
   );

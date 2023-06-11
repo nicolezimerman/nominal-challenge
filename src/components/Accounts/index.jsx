@@ -2,7 +2,7 @@
 import Account from "../Account";
 
 // eslint-disable-next-line react/prop-types
-function AccountsChart({ accounts }) {
+function Accounts({ accounts }) {
   return (
     <>
       <h2>Accounts Chart</h2>
@@ -13,4 +13,4 @@ function AccountsChart({ accounts }) {
     </>
   );
 }
-export default AccountsChart;
+export default Accounts;
