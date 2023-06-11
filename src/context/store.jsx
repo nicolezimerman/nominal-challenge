@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { createContext, useState } from "react";
-import accountsData from "../mock-data/get";
+import accountsData from "../mock-data/accounts";
 
 export const StoreContext = createContext();
 

@@ -5,7 +5,7 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 function Account({ account: { id, name, has_children } }) {
   return (
-    <div className="container">
+    <div className="account">
       <h3>{name}</h3>
       {has_children && (
         <ArrowDropDownIcon

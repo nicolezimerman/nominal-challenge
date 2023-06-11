@@ -1,16 +1,27 @@
 /* eslint-disable react/prop-types */
-import Account from "../Account";
 
 // eslint-disable-next-line react/prop-types
+import Account from "../Account";
+import "./Accounts.css";
+
 function Accounts({ accounts }) {
   return (
-    <>
-      <h2>Accounts Chart</h2>
+    <div>
+      {accounts.map((parent) => {
+        return (
+          <ul key={parent.name} className="list">
+            <li>
+              <Account account={parent} />
 
-      {accounts.map((account) => (
-        <Account key={account.id} account={account} />
-      ))}
-    </>
+              <div>
+                {/*check also expanded*/}
+                {parent.accounts && <Accounts accounts={parent.accounts} />}
+              </div>
+            </li>
+          </ul>
+        );
+      })}
+    </div>
   );
 }
 export default Accounts;
