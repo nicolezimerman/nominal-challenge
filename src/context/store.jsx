@@ -1,14 +1,15 @@
-/* eslint-disable react/prop-types */
-import { createContext, useState } from "react";
-import accountsData from "../mock-data/accounts";
+import { createContext } from "react";
+import { useAccounts } from "../hooks/useAccounts";
 
 export const StoreContext = createContext();
 
 export function StoreProvider({ children }) {
-  //fill account state with mocked data
-  const [accounts] = useState(accountsData);
+  //see how to update data on store when fetch
+  const { mappedAccounts } = useAccounts();
 
   return (
-    <StoreContext.Provider value={accounts}>{children}</StoreContext.Provider>
+    <StoreContext.Provider value={mappedAccounts}>
+      {children}
+    </StoreContext.Provider>
   );
 }
